@@ -11,7 +11,7 @@
   <body>
     <form class="container">
       <h1>To-do App</h1>
-      <input type="text" placeholder="Enter a todo" />
+      <input type="text" class="text-input" placeholder="Enter a todo" />
       <div class="button-container">
         <button type="button" class="btn-submit">Submit</button>
         <button class="btn-clear-list">Clear List</button>
@@ -19,9 +19,10 @@
     </form>
     <div class="todo-items-container">
       <ul class="todo-list">
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
+        <li class="todo-item">
+          <p>item one</p>
+          <span class="delete-item">x</span>
+        </li>
       </ul>
     </div>
   </body>
