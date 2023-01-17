@@ -5,13 +5,19 @@ btnSubmit.addEventListener('click', () => {
     const textInputValue = document.querySelector('.text-input').value; 
     const todoList = document.querySelector('.todo-list');
     let todoItem = document.createElement("li");
+    let todoItemText = document.createElement("p");
     let btnDeleteItem = document.createElement("span");
     let btnDone = document.createElement("a");
+    todoItemText.innerText = textInputValue;
+    btnDone.innerText = "done";
     btnDeleteItem.innerText = "X";
-    todoItem.innerText = textInputValue;
-    todoItem.classList.add("todo-item");
+    btnDone.classList.add("material-icons","btn-done");
     btnDeleteItem.classList.add("btn-delete-item");
+    todoItem.classList.add("todo-item");
+    btnDone.setAttribute("onclick", "doneItem(event)");
     btnDeleteItem.setAttribute("onclick", "deleteItem(event)");
+    todoItem.appendChild(todoItemText);
+    todoItem.appendChild(btnDone);
     todoItem.appendChild(btnDeleteItem);
     todoList.appendChild(todoItem);
     document.querySelector('.text-input').value = '';
@@ -26,5 +32,10 @@ btnClearList.addEventListener('click', () => {
 function deleteItem(e){
     const parentElement = e.target.parentNode;
     parentElement.remove();
+}
+
+function doneItem(e){
+    const textELement = e.target.previousElementSibling;
+    textELement.style.textDecoration = "line-through";
 }
 
