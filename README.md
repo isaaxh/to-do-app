@@ -2,4 +2,4 @@
 
 Try the app
 
-[Live Demo](https://isaaxh.github.io/to-do-app/)
+[Live Demo](https://isaaxh.github.io/to-do-app)
